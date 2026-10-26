@@ -6,3 +6,20 @@
 **Peak vs average:** size capacity to the peak (or P95); the average hides the afternoon crunch.
 **GPU-hours:** GPUs × hours used; the basic unit of compute demand.
 **Coincident vs non-coincident peak:** whether demand types peak at the same time; decides fleet peak vs sum of peaks.
+
+Right-censored job: still running when the trace ends; count its usage up to the trace end, don't drop it
+Fan-out: a join on a non-unique key that silently duplicates rows and inflates totals
+Anti-join: rows in one table with no match in another (LEFT JOIN ... WHERE right.key IS NULL)
+Reconciliation: proving every input row is kept, de-duplicated, or dropped with a reason
+
+Done today when you can:
+
+ Explain why dropping rows with a missing end_time would understate recent demand
+ Say what validate="many_to_one" protects against, in one sentence
+ clean.merge(specs, on="gpu_type", how="left", validate="many_to_one")
+ #the above code means specs dataframe cannot have duplicates in gpu_type for the join to happen/ if it does then many_to_one will prevent the join and throw and error
+ Name the four checks you'd run first on any new trace: 
+ 1. rows reconcile (raw = clean + dupes + dropped)
+ 2. no negative durations
+ 3. merge kept GPU-hours
+ 4. every known GPU type has specs
