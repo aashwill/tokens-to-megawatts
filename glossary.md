@@ -1,6 +1,6 @@
 # Glossary
 
-**Utilization:** share of installed GPUs that are busy.
+Day01: **Utilization:** share of installed GPUs that are busy.
 **Headroom:** installed minus in use; the buffer for spikes and failures.
 **Planning threshold:** utilization level (often 80–85%) that triggers action.
 **Peak vs average:** size capacity to the peak (or P95); the average hides the afternoon crunch.
@@ -12,7 +12,7 @@ Fan-out: a join on a non-unique key that silently duplicates rows and inflates t
 Anti-join: rows in one table with no match in another (LEFT JOIN ... WHERE right.key IS NULL)
 Reconciliation: proving every input row is kept, de-duplicated, or dropped with a reason
 
-Done today when you can:
+Day03:
 
  Explain why dropping rows with a missing end_time would understate recent demand
  Say what validate="many_to_one" protects against, in one sentence
@@ -23,3 +23,4 @@ Done today when you can:
  2. no negative durations
  3. merge kept GPU-hours
  4. every known GPU type has specs
+
