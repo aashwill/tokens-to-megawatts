@@ -17,7 +17,8 @@ Day03:
  Explain why dropping rows with a missing end_time would understate recent demand
  Say what validate="many_to_one" protects against, in one sentence
  clean.merge(specs, on="gpu_type", how="left", validate="many_to_one")
- #the above code means specs dataframe cannot have duplicates in gpu_type for the join to happen/ if it does then many_to_one will prevent the join and throw and error
+ #the above code means specs dataframe cannot have duplicates in gpu_type in the right table for the join to happen/ if it does then many_to_one will prevent the join and throw and error
+ 
  Name the four checks you'd run first on any new trace: 
  1. rows reconcile (raw = clean + dupes + dropped)
  2. no negative durations
