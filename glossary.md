@@ -25,3 +25,8 @@ Day03:
  3. merge kept GPU-hours
  4. every known GPU type has specs
 
+Day04:
+Grain: what one row of a table represents; check it before any join or count
+Partitioning: splitting a big table into files by a column (here day and hour) so you can read only what you need
+Installed / allocated / used: supply, reserved, and actually busy; the gaps are idle capacity and reserved-but-idle capacity
+Pending demand: pods waiting for GPUs; unmet demand that utilization alone hides
